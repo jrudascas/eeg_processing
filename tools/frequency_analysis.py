@@ -1,6 +1,4 @@
-import mne
-from mne.time_frequency import csd_fourier, csd_multitaper
-
+from mne.time_frequency import csd_fourier
 
 def power_spectral_density_analysis(data, plot_path = None):
     data = data.copy()

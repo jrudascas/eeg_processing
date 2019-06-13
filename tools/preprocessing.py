@@ -2,7 +2,7 @@ import mne
 import numpy as np
 from mne.preprocessing import ICA
 
-def changing_channels_labels(data):
+def change_channels_labels(data):
     # Electrodes are named with LETTER-NUMBER combinations (A1, B2, F4, …) (65+3 locations)
     data = data.copy()
     new_labels = ['Fp1', 'AF7', 'AF3', 'F1', 'F3', 'F5', 'F7', 'FT7', 'FC5', 'FC3', 'FC1', 'C1', 'C3', 'C5', 'T7',
@@ -34,7 +34,7 @@ def apply_reference(data):
     return data
 
 
-def filtering(data, fmin, fmax):
+def filter(data, fmin, fmax):
     data = data.copy()
     # band-pass filtering in the range 1 Hz - 5 Hz
     #fmin, fmax = 1., 40.
@@ -42,7 +42,7 @@ def filtering(data, fmin, fmax):
     # raw_data.plot(n_channels=5, title='Raw data')
     return data
 
-def reading_epochs(data, tmin, tmax, evend_id_path):
+def reade_epochs(data, tmin, tmax, evend_id_path):
     data = data.copy()
     #tmin = -0.1  # start of each epoch (100ms before the trigger)
     #tmax = 0.2  # end of each epoch (200ms after the trigger)
